@@ -2,16 +2,18 @@ namespace PacMan
 {
   public class LevelOne : ILevel
   {
-    public string levelName;
-    public Grid<CellState> LevelMap;
+    private string _levelName = "Level One";
+    private Grid<CellState> _levelMap = new Grid<CellState>(10, 10);
 
-    void ILevel.LevelName()
+
+    string ILevel.LevelName()
     {
-      
+      return "name";
     }
 
-    void ILevel.LevelMap()
+    Grid<CellState> ILevel.LevelMap()
     {
+      return _levelMap;
     }
   }
 
