@@ -1,22 +1,38 @@
+using System;
+
 namespace PacMan
 {
   public class LevelOne : ILevel
   {
-    private string _levelName = "Level One";
-    private Grid<CellState> _levelMap = new Grid<CellState>(10, 10);
+    public string LevelName = "Level One";
+    public Grid<CellState> LevelMap = new Grid<CellState>(10, 10);
 
 
     string ILevel.LevelName()
     {
-      return "name";
+      return LevelName;
     }
 
     Grid<CellState> ILevel.LevelMap()
     {
-      return _levelMap;
+      return LevelMap;
     }
+
+    void ILevel.PrintMap()
+    {
+      for (int i = 0; i < LevelMap.RowCount; i++)
+      {
+        for (int j = 0; j < LevelMap.ColumnCount; j++)
+        {
+          Console.Write(LevelMap[i, j]);
+        }
+        Console.WriteLine();
+      }
+    }
+
+    
   }
-
-
-
 }
+
+
+

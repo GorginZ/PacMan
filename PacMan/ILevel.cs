@@ -6,5 +6,7 @@ namespace PacMan
     // void LevelMap();
     string LevelName();
     Grid<CellState> LevelMap();
+
+    void PrintMap();
   }
 }

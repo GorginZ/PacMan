@@ -1,7 +1,16 @@
 namespace PacMan
 {
-    public class Game
+  public class Game
+  {
+    private ILevel _level;
+
+    public Game()
     {
-        
+      _level = new LevelOne();
     }
+
+
+
+
+  }
 }

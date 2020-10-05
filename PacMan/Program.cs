@@ -6,7 +6,8 @@ namespace PacMan
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var game = new Game();
+            
         }
     }
 }
