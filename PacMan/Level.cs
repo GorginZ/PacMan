@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PacMan
 {
-  public class LevelOne : ILevel
+  public class Level
   {
     public string LevelName
     {
@@ -13,7 +13,7 @@ namespace PacMan
     {
       get;
     }
-    public LevelOne()
+    public Level()
     {
       LevelName = "Level One";
       LevelMap = new Grid<CellState>(10, 10);
@@ -26,7 +26,7 @@ namespace PacMan
       LevelMap.SetMany(wallCoordinates, CellState.Wall);
     }
 
-    void ILevel.PrintMap()
+    void PrintLevel()
     {
       for (int i = 0; i < LevelMap.RowCount; i++)
       {

@@ -2,16 +2,16 @@ namespace PacMan
 {
   public class Game
   {
-    private ILevel _currentLevel;
+    private Level _currentLevel;
 
     public Game()
     {
-      _currentLevel = new LevelOne();
+      _currentLevel = new Level();
     }
 
     public void PrintGameLevel()
     {
-      _currentLevel.PrintMap();
+      // _currentLevel.PrintMap();
     }
 
 
