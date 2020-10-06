@@ -16,18 +16,6 @@ namespace PacMan
       _currentLevel.PrintMap();
     }
 
-    public void Tick(Direction direction)
-    {
-      _currentLevel.Tick();
-    
-
-    }
-
-
-
-
-
-
 
   }
 }
