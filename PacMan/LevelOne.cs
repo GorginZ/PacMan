@@ -17,10 +17,10 @@ namespace PacMan
     {
       LevelName = "Level One";
       LevelMap = new Grid<CellState>(11, 10);
-      // BuildLevel();
+      BuildLevel();
     }
 
-    void ILevel.BuildLevel()
+    void BuildLevel()
     {
       //top wall
       var wallCoordinates = new List<Coordinates> { new Coordinates(0, 0), new Coordinates(0, 1), new Coordinates(0, 2), new Coordinates(0, 3), new Coordinates(0, 4), new Coordinates(0, 5), new Coordinates(0, 6), new Coordinates(0, 7), new Coordinates(0, 8), new Coordinates(0, 9), new Coordinates(1, 9),
@@ -59,7 +59,7 @@ namespace PacMan
       LevelMap.SetMany(pacmanStartingPos, CellState.PacMan);
     }
 
-    void ILevel.PrintMap()
+    public void PrintMap()
     {
       for (int i = 0; i < LevelMap.RowCount; i++)
       {
@@ -70,8 +70,6 @@ namespace PacMan
         Console.WriteLine();
       }
     }
-
-
   }
 }
 

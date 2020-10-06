@@ -13,7 +13,6 @@ namespace PacMan
       get;
     }
 
-    void BuildLevel();
     void PrintMap();
 
   }

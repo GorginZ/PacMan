@@ -7,7 +7,6 @@ namespace PacMan
     public Game()
     {
       _currentLevel = new LevelOne();
-      _currentLevel.BuildLevel();
     }
 
     public void PrintGameLevel()
