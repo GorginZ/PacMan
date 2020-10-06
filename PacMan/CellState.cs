@@ -3,9 +3,9 @@ namespace PacMan
   public enum CellState
   {
 
-    O = 0,
+    Dot = 0,
     Empty = 1,
-    L = 2,
+    Wall = 2,
     PacMan = 3,
     Monster = 4
 
