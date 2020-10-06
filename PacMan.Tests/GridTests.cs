@@ -36,6 +36,16 @@ namespace PacMan.Tests
 
     }
 
+    [Fact]
+    public void Can_Manipulate_Grid_Cell_At_Specified_Element()
+    {
+      var grid = new Grid<CellState>(5, 5);
+
+      grid.SetElement(new Coordinates(0, 0), CellState.PacMan);
+
+      Assert.Equal(CellState.PacMan, grid[0, 0]);
+    }
+
 
   }
 }
