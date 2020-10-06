@@ -4,13 +4,13 @@ namespace PacMan
 {
   public struct Coordinates
   {
-    public int X;
-    public int Y;
+    public int Row;
+    public int Column;
 
-    public Coordinates(int x, int y)
+    public Coordinates(int row, int column)
     {
-      X = x;
-      Y = y;
+      Row = row;
+      Column = column;
     }
 
 

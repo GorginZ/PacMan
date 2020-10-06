@@ -30,10 +30,20 @@ namespace PacMan.Tests
 
       var listOfCoordinatesToManipulate = new List<Coordinates> { new Coordinates(0, 0), new Coordinates(0, 1) };
 
-      grid.SetMany(listOfCoordinatesToManipulate, CellState.o);
+      grid.SetMany(listOfCoordinatesToManipulate, CellState.Wall);
 
-      Assert.Equal(CellState.o, grid[0, 0]);
+      Assert.Equal(CellState.Wall, grid[0, 0]);
 
+    }
+
+    [Fact]
+    public void Can_Manipulate_Grid_Cell_At_Specified_Element()
+    {
+      var grid = new Grid<CellState>(5, 5);
+
+      grid.SetElement(new Coordinates(0, 0), CellState.PacMan);
+
+      Assert.Equal(CellState.PacMan, grid[0, 0]);
     }
 
 

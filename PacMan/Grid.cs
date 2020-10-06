@@ -24,19 +24,24 @@ namespace PacMan
 
     public TItemType this[Coordinates coordinates]
     {
-      get => _cellGrid[coordinates.X, coordinates.Y];
-      set => _cellGrid[coordinates.X, coordinates.Y] = value;
+      get => _cellGrid[coordinates.Row, coordinates.Column];
+      set => _cellGrid[coordinates.Row, coordinates.Column] = value;
     }
 
     public void SetMany(List<Coordinates> coordinatesToSet, TItemType value)
     {
       foreach (Coordinates coordinate in coordinatesToSet)
       {
-        if (coordinate.Y < ColumnCount && coordinate.X < RowCount)
+        if (coordinate.Column < ColumnCount && coordinate.Row < RowCount)
         {
           this[coordinate] = value;
         }
       }
+    }
+
+    public void SetElement(Coordinates coordinateToSet, TItemType value)
+    {
+      this[coordinateToSet] = value;
     }
 
 

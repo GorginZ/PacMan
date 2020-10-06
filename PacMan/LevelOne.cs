@@ -13,6 +13,10 @@ namespace PacMan
     {
       get;
     }
+    public Pac PacManChar = new Pac();
+
+    public int DotsEatenThisLevel = 0;
+
     public LevelOne()
     {
       LevelName = "Level One";
@@ -51,12 +55,11 @@ namespace PacMan
       };
 
       var monstersStartingPosCoordinates = new List<Coordinates> { new Coordinates(3, 3), new Coordinates(4, 4) };
-      var pacmanStartingPos = new List<Coordinates> { new Coordinates(5, 0) };
 
 
       LevelMap.SetMany(wallCoordinates, CellState.Wall);
       LevelMap.SetMany(monstersStartingPosCoordinates, CellState.Monster);
-      LevelMap.SetMany(pacmanStartingPos, CellState.PacMan);
+      LevelMap.SetElement(new Coordinates(5, 0), CellState.PacMan);
     }
 
     public void PrintMap()
@@ -70,6 +73,32 @@ namespace PacMan
         Console.WriteLine();
       }
     }
+
+    public void Points(Coordinates coordinateToCheck)
+    {
+      if (LevelMap[coordinateToCheck.Row, coordinateToCheck.Column].Equals(CellState.Dot))
+      {
+        DotsEatenThisLevel += 1;
+      }
+    }
+
+
+    public void Tick()
+    {
+      var previousCoordinate = PacManChar.CurrentLocation;
+
+      if (PacManChar.CurrentDirection.Equals(Direction.East))
+      {
+        var coordinateToMoveTo = new Coordinates(PacManChar.CurrentLocation.Row, PacManChar.CurrentLocation.Column += 1);
+
+        Points(coordinateToMoveTo);
+
+        LevelMap.SetElement(previousCoordinate, CellState.Empty);
+
+        PacManChar.CurrentLocation = coordinateToMoveTo;
+      }
+    }
+
   }
 }
 

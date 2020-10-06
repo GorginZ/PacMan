@@ -14,6 +14,7 @@ namespace PacMan
     }
 
     void PrintMap();
+    void Tick();
 
   }
 }
