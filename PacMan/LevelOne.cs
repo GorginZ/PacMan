@@ -54,7 +54,7 @@ namespace PacMan
       var pacmanStartingPos = new List<Coordinates> { new Coordinates(5, 0) };
 
 
-      LevelMap.SetMany(wallCoordinates, CellState.L);
+      LevelMap.SetMany(wallCoordinates, CellState.Wall);
       LevelMap.SetMany(monstersStartingPosCoordinates, CellState.Monster);
       LevelMap.SetMany(pacmanStartingPos, CellState.PacMan);
     }
