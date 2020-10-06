@@ -30,9 +30,9 @@ namespace PacMan.Tests
 
       var listOfCoordinatesToManipulate = new List<Coordinates> { new Coordinates(0, 0), new Coordinates(0, 1) };
 
-      grid.SetMany(listOfCoordinatesToManipulate, CellState.Dot);
+      grid.SetMany(listOfCoordinatesToManipulate, CellState.o);
 
-      Assert.Equal(CellState.Dot, grid[0, 0]);
+      Assert.Equal(CellState.o, grid[0, 0]);
 
     }
 
