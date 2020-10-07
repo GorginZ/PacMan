@@ -13,7 +13,7 @@ namespace PacMan
     {
       get;
     }
-    public Pac PacManChar = new Pac();
+    public Pac PacManChar = new Pac(new Coordinates(5, 0), Direction.East);
 
     public int DotsEatenThisLevel = 0;
 
@@ -24,7 +24,7 @@ namespace PacMan
       BuildLevel();
     }
 
-    void BuildLevel()
+    private void BuildLevel()
     {
       //top wall
       var wallCoordinates = new List<Coordinates> { new Coordinates(0, 0), new Coordinates(0, 1), new Coordinates(0, 2), new Coordinates(0, 3), new Coordinates(0, 4), new Coordinates(0, 5), new Coordinates(0, 6), new Coordinates(0, 7), new Coordinates(0, 8), new Coordinates(0, 9), new Coordinates(1, 9),
@@ -52,13 +52,34 @@ namespace PacMan
 
       new Coordinates(8, 5), new Coordinates(8, 6), new Coordinates(8, 7), new Coordinates(7, 7),
       new Coordinates(6, 7)
+
+
+      };
+      // dots
+      var dotCoordinates = new List<Coordinates> { new Coordinates(1, 1), new Coordinates(1, 2), new Coordinates(1, 3), new Coordinates(1, 4), new Coordinates(1, 5), new Coordinates(1, 6), new Coordinates(1, 7), new Coordinates(1, 8), 
+      new Coordinates(2, 1), new Coordinates(2, 5), new Coordinates(1, 8),
+
+      new Coordinates(3, 1), new Coordinates(3, 2), new Coordinates(3, 3), new Coordinates(3, 5),new Coordinates(3, 6), new Coordinates(3, 7), new Coordinates(3, 8),
+      new Coordinates(4,1), new Coordinates(4, 4),new Coordinates(4,5), new Coordinates(4, 8),
+
+      new Coordinates(5, 1), new Coordinates(5, 2),new Coordinates(5, 3),new Coordinates(5, 4), new Coordinates(5, 6), new Coordinates(5, 7), new Coordinates(5, 8), new Coordinates(5, 9),
+
+      new Coordinates(6, 1), new Coordinates(6, 6), new Coordinates(6, 8),
+
+      new Coordinates(7, 1), new Coordinates(7, 2), new Coordinates(7, 3), new Coordinates(7, 4), new Coordinates(7, 5), new Coordinates(7, 6), new Coordinates(7, 8),
+
+      new Coordinates(8, 1),new Coordinates(8, 4), new Coordinates(8, 8),
+
+      new Coordinates(9, 1), new Coordinates(9, 2), new Coordinates(9, 3), new Coordinates(9, 4), new Coordinates(9, 5), new Coordinates(9, 6), new Coordinates(9, 7), new Coordinates(9, 8)
       };
 
-      var monstersStartingPosCoordinates = new List<Coordinates> { new Coordinates(3, 3), new Coordinates(4, 4) };
+      // var monstersStartingPosCoordinates = new List<Coordinates> { new Coordinates(3, 3), new Coordinates(4, 4) };
 
 
       LevelMap.SetMany(wallCoordinates, CellState.Wall);
-      LevelMap.SetMany(monstersStartingPosCoordinates, CellState.Monster);
+      LevelMap.SetMany(dotCoordinates, CellState.Dot);
+
+      // LevelMap.SetMany(monstersStartingPosCoordinates, CellState.Monster);
       LevelMap.SetElement(new Coordinates(5, 0), CellState.PacMan);
     }
 
@@ -74,7 +95,7 @@ namespace PacMan
       }
     }
 
-    public void Points(Coordinates coordinateToCheck)
+    public void IncrementDotsEaten(Coordinates coordinateToCheck)
     {
       if (LevelMap[coordinateToCheck.Row, coordinateToCheck.Column].Equals(CellState.Dot))
       {
@@ -91,7 +112,7 @@ namespace PacMan
       {
         var coordinateToMoveTo = new Coordinates(PacManChar.CurrentLocation.Row, PacManChar.CurrentLocation.Column += 1);
 
-        Points(coordinateToMoveTo);
+        IncrementDotsEaten(coordinateToMoveTo);
 
         LevelMap.SetElement(previousCoordinate, CellState.Empty);
 

@@ -23,7 +23,7 @@ namespace PacMan.Tests
 
       levelOne.Tick();
 
-      Assert.NotEqual(0, levelOne.DotsEatenThisLevel);
+      Assert.Equal(1, levelOne.DotsEatenThisLevel);
 
     }
     [Fact]
@@ -35,6 +35,19 @@ namespace PacMan.Tests
 
       Assert.Equal( CellState.Empty, levelOne.LevelMap[5, 0]);
 
+    }
+
+    [Fact]
+    public void InitialStateOfLevelMap()
+    {
+      var levelOne = new LevelOne();
+
+      var expected = "0,0,0,0,0,0,0" +
+      "\n,2,2,2,2,2";
+
+      var actual = levelOne.LevelMap.SeeGrid();
+
+      Assert.Equal(expected, actual);
     }
     
   }
