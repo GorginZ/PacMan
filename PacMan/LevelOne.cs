@@ -56,28 +56,28 @@ namespace PacMan
 
       };
       // dots
-      var dotCoordinates = new List<Coordinates> { new Coordinates(1, 1), new Coordinates(1, 2), new Coordinates(1, 3), new Coordinates(1, 4), new Coordinates(1, 5), new Coordinates(1, 6), new Coordinates(1, 7), new Coordinates(1, 8), 
-      new Coordinates(2, 1), new Coordinates(2, 5), new Coordinates(1, 8),
+      // var dotCoordinates = new List<Coordinates> { new Coordinates(1, 1), new Coordinates(1, 2), new Coordinates(1, 3), new Coordinates(1, 4), new Coordinates(1, 5), new Coordinates(1, 6), new Coordinates(1, 7), new Coordinates(1, 8),
+      // new Coordinates(2, 1), new Coordinates(2, 5), new Coordinates(1, 8),
 
-      new Coordinates(3, 1), new Coordinates(3, 2), new Coordinates(3, 3), new Coordinates(3, 5),new Coordinates(3, 6), new Coordinates(3, 7), new Coordinates(3, 8),
-      new Coordinates(4,1), new Coordinates(4, 4),new Coordinates(4,5), new Coordinates(4, 8),
+      // new Coordinates(3, 1), new Coordinates(3, 2), new Coordinates(3, 3), new Coordinates(3, 5),new Coordinates(3, 6), new Coordinates(3, 7), new Coordinates(3, 8),
+      // new Coordinates(4,1), new Coordinates(4, 4),new Coordinates(4,5), new Coordinates(4, 8),
 
-      new Coordinates(5, 1), new Coordinates(5, 2),new Coordinates(5, 3),new Coordinates(5, 4), new Coordinates(5, 6), new Coordinates(5, 7), new Coordinates(5, 8), new Coordinates(5, 9),
+      // new Coordinates(5, 1), new Coordinates(5, 2),new Coordinates(5, 3),new Coordinates(5, 4), new Coordinates(5, 6), new Coordinates(5, 7), new Coordinates(5, 8), new Coordinates(5, 9),
 
-      new Coordinates(6, 1), new Coordinates(6, 6), new Coordinates(6, 8),
+      // new Coordinates(6, 1), new Coordinates(6, 6), new Coordinates(6, 8),
 
-      new Coordinates(7, 1), new Coordinates(7, 2), new Coordinates(7, 3), new Coordinates(7, 4), new Coordinates(7, 5), new Coordinates(7, 6), new Coordinates(7, 8),
+      // new Coordinates(7, 1), new Coordinates(7, 2), new Coordinates(7, 3), new Coordinates(7, 4), new Coordinates(7, 5), new Coordinates(7, 6), new Coordinates(7, 8),
 
-      new Coordinates(8, 1),new Coordinates(8, 4), new Coordinates(8, 8),
+      // new Coordinates(8, 1),new Coordinates(8, 4), new Coordinates(8, 8),
 
-      new Coordinates(9, 1), new Coordinates(9, 2), new Coordinates(9, 3), new Coordinates(9, 4), new Coordinates(9, 5), new Coordinates(9, 6), new Coordinates(9, 7), new Coordinates(9, 8)
-      };
+      // new Coordinates(9, 1), new Coordinates(9, 2), new Coordinates(9, 3), new Coordinates(9, 4), new Coordinates(9, 5), new Coordinates(9, 6), new Coordinates(9, 7), new Coordinates(9, 8)
+      // };
 
       // var monstersStartingPosCoordinates = new List<Coordinates> { new Coordinates(3, 3), new Coordinates(4, 4) };
 
 
       LevelMap.SetMany(wallCoordinates, CellState.Wall);
-      LevelMap.SetMany(dotCoordinates, CellState.Dot);
+      // LevelMap.SetMany(dotCoordinates, CellState.Dot);
 
       // LevelMap.SetMany(monstersStartingPosCoordinates, CellState.Monster);
       LevelMap.SetElement(new Coordinates(5, 0), CellState.PacMan);
@@ -102,6 +102,7 @@ namespace PacMan
         DotsEatenThisLevel += 1;
       }
     }
+
 
 
     public void Tick()

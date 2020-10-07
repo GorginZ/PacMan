@@ -37,18 +37,19 @@ namespace PacMan.Tests
 
     }
 
-    [Fact]
-    public void InitialStateOfLevelMap()
-    {
-      var levelOne = new LevelOne();
+    // [Fact]
+    // public void InitialStateOfLevelMap()
+    // {
+    //   var levelOne = new LevelOne();
 
-      var expected = "0,0,0,0,0,0,0" +
-      "\n,2,2,2,2,2";
+    //   var expected = $"{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}{CellState.Wall}\n{CellState.Wall}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Dot}{CellState.Wall}\n{CellState.Wall}
+    //   {CellState.Dot}{CellState.Dot}{CellState.Dot}"; 
 
-      var actual = levelOne.LevelMap.SeeGrid();
 
-      Assert.Equal(expected, actual);
-    }
+    //   var actual = levelOne.LevelMap.SeeGrid();
+
+    //   Assert.Equal(expected, actual);
+    // }
     
   }
 }
