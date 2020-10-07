@@ -1,14 +1,14 @@
+using System;
 using System.Collections.Generic;
 
 namespace PacMan
 {
   public class Game
   {
-    private ILevel _currentLevel = new LevelOne();
-
-
+    private World _currentLevel;
 
     public int score = 0;
+
 
 
 

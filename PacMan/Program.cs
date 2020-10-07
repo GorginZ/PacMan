@@ -9,6 +9,7 @@ namespace PacMan
             var game = new Game();
          
             game.PrintGameLevel();
+            
         }
     }
 }

@@ -13,8 +13,8 @@ namespace PacMan
       get;
     }
 
-    void PrintMap();
-    void Tick();
+    
+
 
   }
 }

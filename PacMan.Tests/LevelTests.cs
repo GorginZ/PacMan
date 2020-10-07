@@ -8,7 +8,7 @@ namespace PacMan.Tests
     [Fact]
     public void PacManLocationChangesOnTick()
     {
-      var levelOne = new LevelOne();
+      var levelOne = new Level();
 
       levelOne.Tick();
 
@@ -19,7 +19,7 @@ namespace PacMan.Tests
     [Fact]
     public void DotsEatenThisLevelIncrementWhenPacManEats()
     {
-      var levelOne = new LevelOne();
+      var levelOne = new Level();
 
       levelOne.Tick();
 
@@ -29,7 +29,7 @@ namespace PacMan.Tests
     [Fact]
     public void DotDisappearsOnceEaten()
     {
-      var levelOne = new LevelOne();
+      var levelOne = new Level();
 
       levelOne.Tick();
 
