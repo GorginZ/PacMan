@@ -12,5 +12,15 @@ namespace PacMan
 
 
 
+    //     Dot = 'o',
+    // Empty = ' ',
+    // Wall = '|',
+    // PacMan = 'V',
+    // Monster = 'M'
+
+
+
+
+
   }
 }

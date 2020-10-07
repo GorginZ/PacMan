@@ -1,32 +1,21 @@
+using System;
 using System.Collections.Generic;
 
 namespace PacMan
 {
   public class Game
   {
-    private ILevel _currentLevel = new LevelOne();
-
+    private World _currentLevel = new World(new Level());
 
     public int score = 0;
 
 
 
-    public void PrintGameLevel()
+
+    public string PrintGameWorld()
     {
-      _currentLevel.PrintMap();
+     return _currentLevel.Grid.SeeGrid();
     }
-
-    public void Tick(Direction direction)
-    {
-      _currentLevel.Tick();
-    
-
-    }
-
-
-
-
-
 
 
   }

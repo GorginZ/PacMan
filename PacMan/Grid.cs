@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Text;
 
 namespace PacMan
 {
@@ -42,6 +42,22 @@ namespace PacMan
     public void SetElement(Coordinates coordinateToSet, TItemType value)
     {
       this[coordinateToSet] = value;
+    }
+
+    public String SeeGrid()
+    {
+      var seeSB = new StringBuilder();
+
+      for (int i = 0; i < this.RowCount; i++)
+      {
+        for (int j = 0; j < this.ColumnCount; j++)
+        {
+
+          seeSB.Append(this[i, j].ToString());
+        }
+        seeSB.Append("\n");
+      }
+      return seeSB.ToString();
     }
 
 
