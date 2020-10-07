@@ -5,16 +5,16 @@ namespace PacMan
 {
   public class Game
   {
-    private World _currentLevel;
+    private World _currentLevel = new World(new Level());
 
     public int score = 0;
 
 
 
 
-    public void PrintGameLevel()
+    public string PrintGameWorld()
     {
-      _currentLevel.PrintMap();
+     return _currentLevel.Grid.SeeGrid();
     }
 
 

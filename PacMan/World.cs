@@ -45,16 +45,5 @@ namespace PacMan
       }
     }
 
-    public void PrintMap()
-    {
-      for (int i = 0; i < Grid.RowCount; i++)
-      {
-        for (int j = 0; j < Grid.ColumnCount; j++)
-        {
-          Console.Write(Grid[i, j]);
-        }
-        Console.WriteLine();
-      }
-    }
   }
 }
